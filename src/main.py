@@ -6,9 +6,9 @@ from gradient import *
 from basis_functions import *
 
 
-unscaled_training = np.loadtxt("data/training2.data")
-#unscaled_validation = np.loadtxt("data/validation3.data")
-unscaled_test=np.loadtxt("data/test2.data")
+unscaled_training = np.loadtxt("../data/training2.data")
+#unscaled_validation = np.loadtxt("../data/validation3.data")
+unscaled_test=np.loadtxt("../data/test2.data")
 min_value,max_value = min_max(unscaled_training)
 training = scale_min(unscaled_training,min_value,max_value)
 #validation = scale_min(unscaled_validation,min_value,max_value)
@@ -24,8 +24,8 @@ testY=unscaled_test[:,-1:]
 #func = poly(id,5)
 #func = poly(id,10)
 #func = product_all(id)
-#func = poly(product_all(id),10)
-func = product_all(poly(id,5))
+func = poly(product_all(id),10)
+#func = product_all(poly(id,5))
 #func = gauss(id,1)
 based_training=func(trainingX)
 #based_valid = func(validX)
